@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Row, Col, List } from 'antd';
 import { GlobalOutlined, RightOutlined } from '@ant-design/icons';
-import useCountries from 'api/countries';
 import Regions from 'api/regions.json';
 import { AppHeader } from 'components/AppHeader';
 import styles from './styles';
 const { Content } = Layout;
 
 const Main = () => {
-  const [getCountriesByRegion, countries, errorMessage] = useCountries();
 
   return (
     <Layout>
@@ -22,13 +21,14 @@ const Main = () => {
               bordered
               dataSource={Regions}
               renderItem={region => (
-                <List.Item
-                  style={styles.listItem}
-                  onClick={() => getCountriesByRegion(region.name)}
-                >
-                  {region.name}
-                  <RightOutlined style={styles.listItemIcon} />
-                </List.Item>
+                <Link to={`${region.name}/countries`} >
+                  <List.Item
+                    style={styles.listItem}
+                  >
+                    {region.name}
+                    <RightOutlined style={styles.listItemIcon} />
+                  </List.Item>
+                </Link>
               )
               }
             />

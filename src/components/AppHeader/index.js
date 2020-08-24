@@ -4,10 +4,10 @@ import { Layout, Row } from 'antd';
 const { Header } = Layout;
 
 
-export const AppHeader = (props) => {
+export const AppHeader = ({ title }) => {
   return (
     <Header style={styles.header}>
-      <div>Countries - App</div>
+      <div>{title ? title : `Countries - App`}</div>
     </Header>
   )
 };
