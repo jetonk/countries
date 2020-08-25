@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { Layout, Row, Col, Table, Alert } from 'antd';
+import { Layout, Row, Col, Table, Alert, Spin } from 'antd';
 import useCountries from 'api/countries';
 import { AppHeader } from 'components/AppHeader';
 import styles from './styles';
@@ -10,7 +10,7 @@ const { Content } = Layout;
 const Countries = () => {
   let { region } = useParams();
   let history = useHistory();
-  const [getCountriesByRegion, countries, errorMessage] = useCountries();
+  const [getCountriesByRegion, countries, errorMessage, isLoading] = useCountries();
 
   useEffect(() => {
     getCountriesByRegion(region);
@@ -45,6 +45,7 @@ const Countries = () => {
       <Content>
         <Row type="flex" justify="center" align="top" style={styles.tableContainer}>
           <Col xs={22} xl={12}>
+            {isLoading && <Spin style={styles.spinner} size="large" />}
             {errorMessage.length ? (
               <Alert message={errorMessage} type="error" />
             ) : (
