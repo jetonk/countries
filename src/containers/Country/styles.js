@@ -4,6 +4,7 @@ export default {
     rowDirection: 'row',
   },
   name: {
+    width: '30%',
     fontWeight: 'bolder',
     fontColor: '#000000',
     textTransform: 'capitalize',
@@ -13,22 +14,28 @@ export default {
   },
   value: {
     paddingLeft: 35,
+    width: '30%',
     fontColor: '#000000',
     display: 'flex',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   flagContainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
   },
   image: {
     width: 350,
     height: 250,
   },
   listContainer: {
-    paddingTop: 35,
+    fontSize: 16,
+    paddingTop: 25,
     backgroundColor: '#FFFFFF',
+  },
+  rowItem: {
+    display: 'flex',
   }
 }

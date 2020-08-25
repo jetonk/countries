@@ -7,30 +7,9 @@ import styles from './styles';
 const { Content } = Layout;
 
 const Country = () => {
-  let { countryName } = useParams();
   let history = useHistory();
   const { country } = history.location.state;
-  console.log('history', country);
-
-
-  const columns = [
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      sorterDirections: ['ascend' | 'descend'],
-      sorter: (a, b) => a.name.length - b.name.length,
-    },
-    {
-      title: 'Population',
-      dataIndex: 'population',
-      key: 'population',
-      sorter: (a, b) => a.population - b.population,
-      sorterDirections: ['ascend' | 'descend'],
-      ellipsis: false,
-      render: (population) => population.toLocaleString(),
-    },
-  ];
+  console.log('country', country);
 
   const renderData = (country, key) => {
     const value = country[key];
@@ -47,31 +26,40 @@ const Country = () => {
 
   const renderArray = (data) => {
     return data.map(value => {
-      return <div>{typeof value !== 'object' ? value : value.name}</div>
+      return <div style={styles.rowItem}>{typeof value !== 'object' ? value : value.name}</div>
     });
   }
 
   const renderObject = (data) => {
-    return Object.keys(data).map(value => <div>{value}</div>);
+    return Object.keys(data).map(value => <div style={styles.rowItem}>{value}</div>);
+  }
+
+  const textFormatter = (string) => {
+    return string.replace(/([a-z](?=[A-Z]))/g, '$1 ');
   }
 
   return (
     <Layout>
       <AppHeader title={`${country.name} / ${country.nativeName}`} />
       <Content>
-        <Row type="flex" justify="center" align="top" style={styles.listcontainer}>
-          <Col span={12}>
-            <div style={styles.flagContainer}>
-              <img src={country.flag} alt="country-flag" style={styles.image} />
-            </div>
-            {Object.keys(country).map((key) => (
-              <div style={styles.rowContainer} key={key}>
-                <div style={styles.name}>{key}</div>
-                <div style={styles.value}>{renderData(country, key)}</div>
-              </div>
-            ))}
-          </Col>
-        </Row>
+        <div style={styles.flagContainer}>
+          <img src={country.flag} alt="country-flag" style={styles.image} />
+        </div>
+        {Object.keys(country).map((key) => (
+          <Row
+            type="flex"
+            justify="center"
+            align="top"
+            style={styles.listContainer}
+          >
+            <Col span={6}>
+              <div style={styles.name}>{textFormatter(key)}</div>
+            </Col>
+            <Col span={6}>
+              <div style={styles.value}>{renderData(country, key)}</div>
+            </Col>
+          </Row>
+        ))}
       </Content>
     </Layout>
   )
