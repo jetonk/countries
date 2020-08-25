@@ -38,6 +38,7 @@ const Countries = () => {
   const navigateTo = (country) => {
     history.push(`/country/${country.name}`, { country })
   }
+
   return (
     <Layout>
       <AppHeader title={region} />
