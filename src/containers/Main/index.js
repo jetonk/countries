@@ -14,7 +14,7 @@ const Main = () => {
       <AppHeader />
       <Content>
         <Row type="flex" justify="center" align="top" style={styles.listContainer}>
-          <Col span={8}>
+          <Col xs={22} xl={8}>
             <List
               size="large"
               header={<div style={styles.listHeader}> <GlobalOutlined /> Regions</div>}

@@ -1,5 +1,6 @@
 export default {
   header: {
+    paddingTop: 25,
     backgroundColor: '#FFFFFF',
     display: 'flex',
     flexDirection: 'row',

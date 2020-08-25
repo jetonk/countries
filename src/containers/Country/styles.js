@@ -25,6 +25,7 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
+    paddingTop: 30,
   },
   image: {
     width: 350,

@@ -5,6 +5,7 @@ import { Layout, Row, Col } from 'antd';
 import { AppHeader } from 'components/AppHeader';
 import styles from './styles';
 import { TextFormatter } from 'utils/TextFormatter';
+import shortid from 'shortid';
 const { Content } = Layout;
 
 const Country = () => {
@@ -26,12 +27,22 @@ const Country = () => {
 
   const renderArray = (data) => {
     return data.map(value => {
-      return <div style={styles.rowItem}>{typeof value !== 'object' ? value : value.name}</div>
+      return <div style={styles.rowItem}
+        key={shortid.generate()}>
+        {typeof value !== 'object' ? value : value.name}
+      </div>
     });
   }
 
   const renderObject = (data) => {
-    return Object.keys(data).map(value => <div style={styles.rowItem}>{value}</div>);
+    return Object.keys(data).map(value =>
+      <Col
+        xs={12} xl={24}
+        style={styles.rowItem}
+        key={shortid.generate()}
+      >
+        {value}
+      </Col>);
   }
 
   return (
@@ -47,11 +58,12 @@ const Country = () => {
             justify="center"
             align="top"
             style={styles.listContainer}
+            key={shortid.generate()}
           >
-            <Col span={6}>
+            <Col xs={4} xl={3}>
               <div style={styles.name}>{TextFormatter(key)}</div>
             </Col>
-            <Col span={6}>
+            <Col xs={14} xl={3}>
               <div style={styles.value}>{renderData(country, key)}</div>
             </Col>
           </Row>

@@ -10,7 +10,7 @@ export default () => {
       const response = await Request.get(`/region/${region}`);
       setCountries(response.data);
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage(error.message);
     }
   };
 
