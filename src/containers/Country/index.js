@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import { Layout, Row, Col, List } from 'antd';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { Layout, Row, Col } from 'antd';
 import { AppHeader } from 'components/AppHeader';
 import styles from './styles';
+import { TextFormatter } from 'utils/TextFormatter';
 const { Content } = Layout;
 
 const Country = () => {
   let history = useHistory();
   const { country } = history.location.state;
-  console.log('country', country);
 
   const renderData = (country, key) => {
     const value = country[key];
@@ -34,10 +34,6 @@ const Country = () => {
     return Object.keys(data).map(value => <div style={styles.rowItem}>{value}</div>);
   }
 
-  const textFormatter = (string) => {
-    return string.replace(/([a-z](?=[A-Z]))/g, '$1 ');
-  }
-
   return (
     <Layout>
       <AppHeader title={`${country.name} / ${country.nativeName}`} />
@@ -53,7 +49,7 @@ const Country = () => {
             style={styles.listContainer}
           >
             <Col span={6}>
-              <div style={styles.name}>{textFormatter(key)}</div>
+              <div style={styles.name}>{TextFormatter(key)}</div>
             </Col>
             <Col span={6}>
               <div style={styles.value}>{renderData(country, key)}</div>

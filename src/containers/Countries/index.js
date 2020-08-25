@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { Layout, Row, Col, Table } from 'antd';
 import useCountries from 'api/countries';
