@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/countries/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/countries/static/js/main.a6a435e4.chunk.js",
-    "main.js.map": "/countries/static/js/main.a6a435e4.chunk.js.map",
-    "runtime-main.js": "/countries/static/js/runtime-main.f185186b.js",
-    "runtime-main.js.map": "/countries/static/js/runtime-main.f185186b.js.map",
-    "static/css/2.04ff9426.chunk.css": "/countries/static/css/2.04ff9426.chunk.css",
-    "static/js/2.69670c56.chunk.js": "/countries/static/js/2.69670c56.chunk.js",
-    "static/js/2.69670c56.chunk.js.map": "/countries/static/js/2.69670c56.chunk.js.map",
-    "index.html": "/countries/index.html",
-    "precache-manifest.29d2d5c63968cece5c022da5d5fa54c3.js": "/countries/precache-manifest.29d2d5c63968cece5c022da5d5fa54c3.js",
-    "service-worker.js": "/countries/service-worker.js",
-    "static/css/2.04ff9426.chunk.css.map": "/countries/static/css/2.04ff9426.chunk.css.map",
-    "static/css/main.5ecd60fb.chunk.css.map": "/countries/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.69670c56.chunk.js.LICENSE.txt": "/countries/static/js/2.69670c56.chunk.js.LICENSE.txt"
+    "main.css": "/react-app-countries/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/react-app-countries/static/js/main.73a48cd4.chunk.js",
+    "main.js.map": "/react-app-countries/static/js/main.73a48cd4.chunk.js.map",
+    "runtime-main.js": "/react-app-countries/static/js/runtime-main.7406d703.js",
+    "runtime-main.js.map": "/react-app-countries/static/js/runtime-main.7406d703.js.map",
+    "static/css/2.04ff9426.chunk.css": "/react-app-countries/static/css/2.04ff9426.chunk.css",
+    "static/js/2.69670c56.chunk.js": "/react-app-countries/static/js/2.69670c56.chunk.js",
+    "static/js/2.69670c56.chunk.js.map": "/react-app-countries/static/js/2.69670c56.chunk.js.map",
+    "index.html": "/react-app-countries/index.html",
+    "precache-manifest.d8faeb09ea1a30fc8ebed498dde6493e.js": "/react-app-countries/precache-manifest.d8faeb09ea1a30fc8ebed498dde6493e.js",
+    "service-worker.js": "/react-app-countries/service-worker.js",
+    "static/css/2.04ff9426.chunk.css.map": "/react-app-countries/static/css/2.04ff9426.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/react-app-countries/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.69670c56.chunk.js.LICENSE.txt": "/react-app-countries/static/js/2.69670c56.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f185186b.js",
+    "static/js/runtime-main.7406d703.js",
     "static/css/2.04ff9426.chunk.css",
     "static/js/2.69670c56.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.a6a435e4.chunk.js"
+    "static/js/main.73a48cd4.chunk.js"
   ]
 }
